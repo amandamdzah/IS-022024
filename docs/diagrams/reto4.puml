@@ -1,0 +1,37 @@
+@startuml furbo
+class Persona{
+    #string nombre
+    #int tlf
+    # String Dirección
+
+}
+class Jugador{
+    #int numero
+    #string posición
+    #Equipo equipo
+    #bool Capitán
+}
+class Equipo{
+    #string nombre
+    #Jugador jugadores[]
+    #Entrenador entrenador
+}
+class Juego{
+    #string localidad
+    #float puntuación
+    #Equipo equipoLocal
+    #Equipo equipoVisitante
+}
+class Entrenador{
+    #int nivelAcreditación
+    #int añosExperiencia
+}
+
+Persona<|--Jugador
+Persona<|--Entrenador
+Equipo  o-- "6..20" Jugador
+Equipo  o-- "1..*" Entrenador
+Juego  <-- "2" Equipo: juega
+
+
+@enduml

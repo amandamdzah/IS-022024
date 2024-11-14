@@ -1,0 +1,71 @@
+@startuml objeto
+object Jugador1{
+    numero= 18
+    posición=libero
+    equipo=Venezuela
+    capitán=true
+}
+object Persona1{
+    name=Carlos Monasterios
+    tlf=0426546232
+    dirección= Caracas
+}
+object Persona2{
+    name=Jose Luis
+    tlf=326546
+    dirección= Bogotá
+}
+object Jugador2{
+    numero= 3
+    posición=Defensa
+    equipo=Colombia
+    capitán=false
+}
+object equipo1{
+    nombre=Venezuela
+    Jugadores=jugador[]
+    Entrenador=Entrenador1
+}
+object equipo2{
+    nombre=Colimbia
+    Jugadores=jugador[]
+    Entrenador=Entrenador2
+}
+object Persona3{
+    name=Martin Bustamante
+    tlf=424856698
+    dirección= Caracas
+}
+object Entrenador1{
+    Equipos=equipo[]
+    nivelAcreditacion= 6
+    añosExper=20
+}
+object Entrenador2{
+    Equipos=equipo[]
+    nivelAcreditacion= 3
+    añosExper=7
+}
+object Persona4{
+    name=Juan Ramón
+    tlf=785963
+    dirección= Bogotá
+}
+object Juego{
+    Localidad=Chile
+    Puntuación=12
+    equipoLocal=equipo1
+    equipoVisitante=equipo2
+}
+Persona1<|--Jugador1
+Persona2<|--Jugador2
+Persona3<|--Entrenador1
+Persona4<|--Entrenador2
+equipo1 o--Jugador1
+equipo2 o--Jugador2
+equipo1 o--Entrenador1
+equipo2 o--Entrenador2
+Juego  <--equipo1
+Juego  <--equipo2
+
+@enduml
